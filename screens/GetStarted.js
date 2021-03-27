@@ -1,5 +1,14 @@
-import React from 'react';
-import {StyleSheet, View, Text, Image, TouchableOpacity} from 'react-native';
+import React, {useEffect} from 'react';
+import {
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  BackHandler,
+} from 'react-native';
+import {useIsFocused} from '@react-navigation/native';
+
 import {
   Pic,
   Fonts,
@@ -10,6 +19,23 @@ import {
 } from '../components/theme';
 
 export default function GetStarted({navigation}) {
+  const isFocused = useIsFocused();
+
+  useEffect(() => {
+    console.log(isFocused);
+    if (isFocused) {
+      BackHandler.addEventListener('hardwareBackPress', backAction);
+    }
+
+    return () =>
+      BackHandler.removeEventListener('hardwareBackPress', backAction);
+  }, [isFocused]);
+
+  const backAction = () => {
+    BackHandler.exitApp();
+    return true;
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.ImageView}>

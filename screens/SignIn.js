@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   StyleSheet,
   View,
@@ -6,7 +6,9 @@ import {
   TextInput,
   Image,
   TouchableOpacity,
+  BackHandler,
 } from 'react-native';
+import {useIsFocused} from '@react-navigation/native';
 import {
   Pic,
   Fonts,
@@ -18,6 +20,23 @@ import {
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default function SignIn({navigation}) {
+  const isFocused = useIsFocused();
+
+  useEffect(() => {
+    console.log(isFocused);
+    if (isFocused) {
+      BackHandler.addEventListener('hardwareBackPress', backAction);
+    }
+
+    return () =>
+      BackHandler.removeEventListener('hardwareBackPress', backAction);
+  }, [isFocused]);
+
+  const backAction = () => {
+    BackHandler.exitApp();
+    return true;
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.ImageView}>
@@ -63,7 +82,7 @@ export default function SignIn({navigation}) {
       <View style={styles.buttonGroup}>
         <View style={{marginHorizontal: '4%'}}>
           <TouchableOpacity
-            onPress={() => navigation.navigate('GetStarted')}
+            onPress={backAction}
             style={{...styles.button, backgroundColor: '#ccc'}}>
             <Text style={{...styles.buttonText, color: '#000'}}>Back</Text>
           </TouchableOpacity>
