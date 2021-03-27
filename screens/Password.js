@@ -41,7 +41,7 @@ export default function Password({navigation}) {
         />
       </View>
       <View style={styles.textStyleView}>
-        <TouchableOpacity onPress={() => navigation.navigate('BottomTab')}>
+        <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
           <View
             style={{
               ...styles.textStyle,
@@ -83,7 +83,9 @@ export default function Password({navigation}) {
       </View>
       <View style={styles.buttonGroup}>
         <View>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate('BottomTab')}>
             <Text style={styles.buttonText}>Sign in</Text>
           </TouchableOpacity>
         </View>
