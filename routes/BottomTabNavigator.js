@@ -37,7 +37,8 @@ export default function BottomTabNavigator() {
     <Tab.Navigator
       initialRouteName="Chats"
       tabBarOptions={{
-        activeTintColor: '#e91e63',
+        // activeTintColor: '#e91e63',
+        activeTintColor: '#0178D4',
       }}
       // screenOptions={({route}) => ({
       //   tabBarIcon: ({focused, color, size}) => {

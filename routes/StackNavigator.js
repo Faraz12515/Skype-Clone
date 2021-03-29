@@ -17,7 +17,7 @@ import BottomTab from './BottomTabNavigator';
 export default function StackNavigator() {
   const Stack = createStackNavigator();
   return (
-    <Stack.Navigator headerMode="none" options={{}}>
+    <Stack.Navigator headerMode="none">
       {/* <Stack.Screen name="HomeScreen" component={HomeScreen} /> */}
       <Stack.Screen name="SplashScreen" component={SplashScreen} />
       <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
