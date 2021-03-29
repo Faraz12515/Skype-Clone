@@ -18,7 +18,7 @@ export default function Chats({navigation}) {
 
       <View style={styles.topHeader}>
         <View style={styles.leftIcons}>
-          <Icons.SimpleLineIcons name="bell" size={25} color="black" />
+          <Icons.SimpleLineIcons name="bell" size={25} color="#242424" />
         </View>
         <View style={styles.logoImage}>
           <Image
@@ -42,19 +42,19 @@ export default function Chats({navigation}) {
           <Icons.MaterialCommunityIcons
             name="video-outline"
             size={35}
-            color="black"
+            color="#242424"
             style={styles.rightIconsStyle}
           />
           <Icons.EvilIcons
             name="search"
             size={35}
-            color="black"
+            color="#242424"
             style={styles.rightIconsStyle}
           />
           <Icons.MaterialCommunityIcons
             name="dots-vertical"
             size={30}
-            color="black"
+            color="#242424"
             style={styles.rightIconsStyle}
           />
         </View>
@@ -90,8 +90,8 @@ export default function Chats({navigation}) {
           );
         })}
       </ScrollView>
-      {/*----------Floating Button----------*/}
 
+      {/*----------Floating Button----------*/}
       <View
         style={{
           position: 'absolute',
@@ -102,8 +102,8 @@ export default function Chats({navigation}) {
           borderColor: '#fff',
           borderRadius: 50,
           elevation: 5,
-          height: 65,
-          width: 65,
+          height: 60,
+          width: 60,
         }}>
         <TouchableOpacity>
           <View
@@ -171,6 +171,7 @@ const styles = StyleSheet.create({
   },
   chatAndDateView: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
     paddingVertical: '3%',
     borderBottomWidth: 1,
     borderBottomColor: '#ccc',
