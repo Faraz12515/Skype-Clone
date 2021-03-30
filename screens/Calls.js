@@ -39,7 +39,7 @@ export default function Calls({navigation}) {
         </View>
       </View>
 
-      {/*----------Chat Section----------*/}
+      {/*----------Calls Section----------*/}
       <ScrollView>
         {CallsData.map((v, i) => {
           return (
@@ -59,8 +59,8 @@ export default function Calls({navigation}) {
                   <View style={styles.chatStyle}>
                     <Text style={styles.nameStyle}>{v.name}</Text>
                     <View style={styles.msgStyleView}>
-                      <Icons.SimpleLineIcons
-                        name="call-out"
+                      <Icons.MaterialCommunityIcons
+                        name="phone-outgoing-outline"
                         size={15}
                         color="gray"
                       />

@@ -7,6 +7,8 @@ import HomeScreen from './HomeScreen';
 import Chats from './Chats';
 import Calls from './Calls';
 import Contacts from './Contacts';
+import All from './All';
+import MyContacts from './MyContacts';
 export {
   SplashScreen,
   WelcomeScreen,
@@ -17,4 +19,6 @@ export {
   Chats,
   Calls,
   Contacts,
+  All,
+  MyContacts,
 };

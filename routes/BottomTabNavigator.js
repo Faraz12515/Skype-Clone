@@ -7,6 +7,8 @@ import {Chats, Calls, Contacts} from '../screens';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
+import MaterialTopTab from './MaterialTopTabNavigator';
+
 export default function BottomTabNavigator() {
   const isFocused = useIsFocused();
 
@@ -85,7 +87,7 @@ export default function BottomTabNavigator() {
       />
       <Tab.Screen
         name="contacts"
-        component={Contacts}
+        children={MaterialTopTab}
         options={{
           tabBarLabel: 'Contacts',
           tabBarIcon: ({color, size}) => (
